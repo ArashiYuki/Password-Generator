@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script src="../js/main.js" defer></script>
+    <title>Petits Jeux</title>
+</head>
+<body>
+    <h1>Générateur de mot de passe</h1>
+
+    <fieldset>
+        <legend>Caractéristiques :</legend>
+
+        <label for="fNumber">Taille</label>
+        <input type="number" id="fNumber" name="fNumber" value="1" required><br>
+        <!-- Avec "barre glissante" -->
+        <!-- <input type="range" id="fNumber" name="fNumber" min="1" max="20" step="1"><br>  -->
+
+        <label for="fMinuscules">Minuscules</label>
+        <input type="checkbox" id="fMinuscules" name="fMinuscules"><br>
+
+        <label for="fMajuscules">Majuscules</label>
+        <input type="checkbox" id="fMajuscules" name="fMajuscules"><br>
+
+        <label for="fChiffres">Chiffres</label>
+        <input type="checkbox" id="fChiffres" name="fChiffres"><br>
+        
+        <label for="fSpeciaux">Caractères spéciaux</label>
+        <input type="checkbox" id="fSpeciaux" name="fSpeciaux"><br>
+    </fieldset>
+
+    <!-- Rend invisible le résultat avant qu'un mdp ne soit généré -->
+    <div id="divResultat" class="invisibble">  
+        <p id="resultat"></p>
+    </div>
+
+    <button class="btn btn-outline-success" id="sendForm">Générer</button>
+</body>
+</html>
