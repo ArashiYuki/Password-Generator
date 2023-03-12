@@ -7,6 +7,8 @@ var checkMajuscules = document.querySelector('#fMajuscules');
 var checkChiffres = document.querySelector('#fChiffres');
 var checkSpeciaux = document.querySelector('#fSpeciaux');
 
+var copy = document.querySelector('#copy');
+
 var listeMinuscules = 'abcdefghijklmnopqrstuvwxyz';             // 97 -> 122 = minuscules (UNICODE)
 var listeMajuscules = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';             // 65 -> 90 = mauscules
 var listeChiffres = '0123456789';                               // 48 -> 57 = chiffres
@@ -45,8 +47,9 @@ bouttonEnvoi.addEventListener('click', function(){
     if (speciaux) {
         listePossibilités += listeSpeciaux;
     } else if (!minuscules && !majuscules && !chiffres && !speciaux) {
-        alert("Vous devez cocher au moins une caractéristique! \n Je considère tout comme coché.");
+        alert("Vous devez cocher au moins une caractéristique! \n Je considère tout comme coché avec une taille de 8.");
         listePossibilités = listeMinuscules + listeMajuscules + listeChiffres + listeSpeciaux;
+        taille.value = 8;
     }
 
     // Création du mot de passe en fonction des caractéristiques choisies
@@ -60,4 +63,10 @@ bouttonEnvoi.addEventListener('click', function(){
     // Affichage sur la page du mot de passe
     showResultat.classList.remove('invisible');
     result.innerText = mdp;
+    copy.style.display = 'block';
+});
+
+copy.addEventListener('click', function() {
+    // Copie le texte entre () dans le presse-papier
+    navigator.clipboard.writeText(result.innerText);
 });
