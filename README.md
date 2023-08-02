@@ -1,4 +1,4 @@
-# Password Generator / Générateur de mots de passe
+# Password Generator / Générateur de mot de passe
 
 Password generator : the user can tick different check-boxes in order to choose his password characteristics (lowercase, uppercase, number, special characters) and width. He can then generate his password by clicking on the generate button as many time as he wants and changing his choices any time he wants.
 
